@@ -2,36 +2,25 @@ const express = require('express');
 const router = express.Router();
 
 
-// CRUD
-
-// Get all products
-router.get('/',  () => {
-
-})
-
-
-// Create a new product
-router.post('/',  () => {
-
-})
+const {
+    getProviders,
+    createProvider,
+    updateProvider,
+    deleteProvider
+} = require("../controllers/providers");
 
 
-// Update a product by id
-router.put('/:id',  () => {
+// Get all providers
+router.get("/", getProviders);
 
-})
+// Create a new provider
+router.post("/", createProvider);
 
+// Update a provider by id
+router.put("/:id", updateProvider);
 
-
-// Delete a product by id
-router.get('/:id',  () => {
-
-})
-
-
-
-
-
+// Delete a provider by id
+router.delete("/:id", deleteProvider);
 
 
 

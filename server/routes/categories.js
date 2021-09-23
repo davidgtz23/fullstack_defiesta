@@ -2,29 +2,24 @@ const express = require('express');
 const router = express.Router();
 
 
-// CRUD
+const {
+    getCategories,
+    createCategory,
+    updateCategory,
+    deleteCategory
+} = require("../controllers/Categories");
 
-// Get all products
-router.get('/',  () => {
+// Get all Categories
+router.get("/", getCategories);
 
-})
+// Create a new Category
+router.post("/", createCategory);
 
-// Create a new product
-router.post('/',  () => {
+// Update a Category by id
+router.put("/:id", updateCategory);
 
-})
-
-
-// Update a product by id
-router.put('/:id',  () => {
-
-})
-
-
-// Delete a product by id
-router.get('/:id',  () => {
-
-})
+// Delete a Category by id
+router.delete("/:id", deleteCategory);
 
 
 
